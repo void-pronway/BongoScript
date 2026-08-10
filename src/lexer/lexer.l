@@ -43,6 +43,8 @@ NUMBER_BANGLA   ("০"|"১"|"২"|"৩"|"৪"|"৫"|"৬"|"৭"|"৮"|"৯")+
         yylineno,
         yytext
     );
+
+    return (unsigned char)yytext[0];
 }
 
 %%
