@@ -1,5 +1,6 @@
 %{
 #include <stdio.h>
+#include "semantic.h"
 
 int yylex(void);
 void yyerror(const char *s);
@@ -31,27 +32,27 @@ program:
 command:
     LIGHT ON SEMICOLON
     {
-        printf("LIGHT -> ON\n");
+        process_device_command(DEVICE_LIGHT, ACTION_ON);
     }
   | LIGHT OFF SEMICOLON
     {
-        printf("LIGHT -> OFF\n");
+        process_device_command(DEVICE_LIGHT, ACTION_OFF);
     }
   | FAN ON SEMICOLON
     {
-        printf("FAN -> ON\n");
+        process_device_command(DEVICE_FAN, ACTION_ON);
     }
   | FAN OFF SEMICOLON
     {
-        printf("FAN -> OFF\n");
+        process_device_command(DEVICE_FAN, ACTION_OFF);
     }
   | AC ON SEMICOLON
     {
-        printf("AC -> ON\n");
-    }
+        process_device_command(DEVICE_AC, ACTION_ON);
+    }   
   | AC OFF SEMICOLON
     {
-        printf("AC -> OFF\n");
+        process_device_command(DEVICE_AC, ACTION_OFF);
     }
   | TEMPERATURE NUMBER IF command
     {
