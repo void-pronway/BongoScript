@@ -38,7 +38,7 @@ void process_device_command(Device device, Action action)
         action_name = "OFF";
     }
 
-    if (*state != -1 && *state != action) {
+    if (*state != -1 && *state != (int)action) {
         printf(
             "Warning: Conflicting command detected for %s\n",
             device_name
