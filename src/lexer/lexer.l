@@ -32,6 +32,8 @@ NUMBER_BANGLA   ("০"|"১"|"২"|"৩"|"৪"|"৫"|"৬"|"৭"|"৮"|"৯")+
 {NUMBER_ASCII}   { return NUMBER; }
 {NUMBER_BANGLA}  { return NUMBER; }
 
+"//"[^\n]*       ;
+
 [ \t\r\n]+       ;
 
 . {
