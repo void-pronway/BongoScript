@@ -2,3 +2,7 @@ parser.tab.c
 parser.tab.h
 
 *.o
+/build/
+*.exe
+lex.yy.c
+.vscode/
