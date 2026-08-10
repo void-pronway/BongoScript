@@ -1,3 +1,4 @@
 parser.tab.c
 parser.tab.h
 
+*.o
